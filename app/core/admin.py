@@ -13,11 +13,11 @@ class UserAdmin(BaseUserAdmin):
     ordering = ['id']
     list_display = ['email', 'name']
     fieldsets = (
-        (None, {'fields':('email', 'password')}),
+        (None, {'fields': ('email', 'password')}),
         (
             _('permissions'),
             {
-                'fields':(
+                'fields': (
                     'is_active',
                     'is_staff',
                     'is_superuser',
@@ -26,7 +26,7 @@ class UserAdmin(BaseUserAdmin):
         ),
         (_('Important dates'), {'fields': ('last_login',)}),
     )
-    readonly_fields = [ 'last_login']
+    readonly_fields = ['last_login']
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
@@ -45,8 +45,5 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Recipe)
-
-
-
-
-
+admin.site.register(models.Tag)
+admin.site.register(models.Ingredient)

@@ -1,7 +1,7 @@
 """
 URL mappings for the recipe app
 """
-from django.urls import(
+from django.urls import (
     path,
     include,
 )
@@ -12,7 +12,9 @@ from recipe import views
 
 
 router = DefaultRouter()
-router.register('/recipes', views.RecipeViewSet)
+router.register('recipes', views.RecipeViewSet)
+router.register('tags', views.TagViewSet)
+router.register('ingredients', views.IngredientViewSet)
 
 app_name = 'recipe'
 
